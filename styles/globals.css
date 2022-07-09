@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body{
+        @apply text-[#f9f9f9f9] bg-[#1A021D] h-screen;
+    }
+}
+@layer components{
+    .iconText{
+        @apply w-5 h-5 md:w-6 md:h-6 ;
+    }
+}
+
