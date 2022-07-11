@@ -4,7 +4,7 @@ import HeaderIcon from "../molecules/HeaderIcon";
 
 const Header = () => {
   return (
-    <header>
+    <header className="bg-green-900 opacity-80">
       <div className="sticky flex items-center justify-center ">
         <div className="flex items-center justify-center space-x-10 w-fit ">
           <BrandLogo w={100} h={100} />
