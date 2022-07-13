@@ -1,9 +1,36 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import HomeTemplate from "../components/templates/HomeTemplate";
+import { Movies, Series, Trending } from "../typings";
 import requests from "../utils/requests";
 
-const Home: NextPage = () => {
+interface Props {
+  trending: Trending;
+  moviesPopular: [Movies];
+  moviesTopRated: [Movies];
+  moviesLatest: [Movies];
+  seriesPopular: [Series];
+  seriesTopRated: [Series];
+  seriesLatest: [Series];
+}
+const Home = ({
+  trending,
+  moviesPopular,
+  moviesTopRated,
+  moviesLatest,
+  seriesPopular,
+  seriesTopRated,
+  seriesLatest,
+}: Props) => {
+  const propsResult = {
+    trending,
+    moviesPopular,
+    moviesTopRated,
+    moviesLatest,
+    seriesPopular,
+    seriesTopRated,
+    seriesLatest,
+  };
   return (
     <div>
       <Head>
@@ -12,7 +39,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <HomeTemplate />
+        <HomeTemplate results={propsResult}/>
       </main>
     </div>
   );
@@ -43,10 +70,10 @@ export const getServerSideProps = async () => {
       trending: trending.results,
       moviesPopular: moviesPopular.results,
       moviesTopRated: moviesTopRated.results,
-      moviesLatest: moviesLatest.results,
+      moviesLatest: moviesLatest,
       seriesPopular: seriesPopular.results,
       seriesTopRated: seriesTopRated.results,
-      seriesLatest: seriesLatest.results,
+      seriesLatest: seriesLatest,
     },
   };
 };
