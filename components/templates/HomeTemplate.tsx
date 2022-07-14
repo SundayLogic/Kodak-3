@@ -18,13 +18,11 @@ interface HomeTemplateProps {
   };
 }
 const HomeTemplate = ({ results }: HomeTemplateProps) => {
-  console.log("Hello");
-  console.log(results.trending);
   return (
     <>
       <Header />
       <Hero />
-      <SlideBanner />
+      <SlideBanner trendingResults={results.trending}/>
       <BrandsHover />
       <section>
         <Content />
