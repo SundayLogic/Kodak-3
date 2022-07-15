@@ -20,12 +20,28 @@ const HomeTemplate = ({ results }: HomeTemplateProps) => {
   return (
     <>
       <Header />
-      <SlideBanner trendingResults={results.trending}/>
-      <section>
-        <Content />
-        <Content />
-        <Content />
-        <Content />
+      <SlideBanner trendingResults={results.trending} />
+      <section className="mt-96 bg-blue-900/30 space-y-3">
+        <Content
+          contentResults={results.moviesPopular}
+          contentTitle={"Popular Movies"}
+          contentType={"movie"}
+        />
+        <Content
+          contentResults={results.moviesTopRated}
+          contentTitle={"Top Rated Movies"}
+          contentType={"movie"}
+        />
+        <Content
+          contentResults={results.moviesLatest}
+          contentTitle={"Latest Movies"}
+          contentType={"movie"}
+        />
+        {/*
+        <Content contentResults={results.seriesPopular} title={"Popular Series"} contentType={"serie"}/>
+        <Content contentResults={results.seriesTopRated} title={"Top Rated Series"} contentType={"serie"}/>
+        <Content contentResults={results.seriesLatest} title={"Latest Series"} contentType={"serie"}/>
+        */}
       </section>
       <Footer />
     </>
