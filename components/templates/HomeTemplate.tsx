@@ -21,7 +21,6 @@ const HomeTemplate = ({ results }: HomeTemplateProps) => {
     <>
       <Header />
       <SlideBanner trendingResults={results.trending}/>
-      <BrandsHover />
       <section>
         <Content />
         <Content />
