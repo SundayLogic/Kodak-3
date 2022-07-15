@@ -4,12 +4,15 @@
 
 @layer base {
     body{
-        @apply text-[#f9f9f9f9] bg-[#1A021D] h-screen;
+        @apply text-[#f9f9f9f9] bg-[#1A021D] h-screen w-screen;
     }
 }
 @layer components{
     .iconText{
         @apply w-5 h-5 md:w-6 md:h-6 ;
+    }
+    .bannerBtn{
+        @apply px-4 py-2 bg-[#1A021D] rounded-md text-lg cursor-pointer items-center;
     }
 }
 
