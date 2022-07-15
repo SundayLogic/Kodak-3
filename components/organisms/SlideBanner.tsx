@@ -2,6 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import { Trending } from "../../typings";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { InformationCircleIcon, PlayIcon } from "@heroicons/react/solid";
 interface SlideBannerProps {
   trendingResults: Trending;
 }
@@ -37,28 +38,34 @@ const SlideBanner = ({ trendingResults }: SlideBannerProps) => {
 
   console.log(movieResult);
   return (
-    <section className="bg-green-900">
+    <section className="px-10 ">
       <div className="-z-10 h-[95vh] absolute top-0 w-screen left-0 shadow-2xl ">
         <Image
           src={image}
           layout="fill"
           objectFit="cover"
           quality="100"
-          className="opacity-90"
+          className="opacity-65"
         />
       </div>
-      <div className="flex flex-col p-2">
-        <div className="flex flex-col bg-orange-700 space-y-2 lg:h-[40vh] lg:justify-end">
-          <h1 className="text-2xl font-bold md:text-4xl lg:text-6xl lg:mb-4">
+      <div className="flex flex-col p-2 space-y-5">
+        <div className="flex flex-col  space-y-2 md:h-[40vh] justify-center lg:h-[40vh] lg:justify-end">
+          <h1 className="text-2xl font-bold md:text-4xl lg:text-6xl lg:mb-4 text-shadow-h1 max-w-[70vw]">
             {contentTitle}
           </h1>
-          <p className="sm:w-[90vw] md:w-[40vw] lg:w-[25vw] md:text-md lg:text-xl md:leading-relaxed">
+          <p className="sm:w-[90vw] md:w-[40vw] lg:w-[25vw] md:text-md lg:text-xl md:leading-relaxed text-shadow-h2">
             {contentOverview}
           </p>
         </div>
-        <div className="flex space-x-3">
-            <button className="bannerBtn">Play</button>
-            <button className="bannerBtn">More Info</button>
+        <div className="flex space-x-4">
+          <button className="bannerBtn">
+            <PlayIcon className="bannerIcon" />
+            <h1>Play</h1>
+          </button>
+          <button className="bannerBtn">
+            <InformationCircleIcon className="bannerIcon" />
+            <h1>More Info</h1>
+          </button>
         </div>
       </div>
     </section>
