@@ -18,8 +18,10 @@ interface HomeTemplateProps {
 const HomeTemplate = ({ results }: HomeTemplateProps) => {
   return (
     <>
+      <div className="mt-0">
         <Header />
-      <SlideBanner trendingResults={results.trending} />
+      </div>
+        <SlideBanner trendingResults={results.trending} />
       <section className="">
         <section className="bg-blue-900/30 space-y-3">
           <ContentMovies />
