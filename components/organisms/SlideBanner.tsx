@@ -26,38 +26,33 @@ const SlideBanner = ({ trendingResults }: SlideBannerProps) => {
 
   let contentOverview = movieResult.overview ? movieResult.overview : null;
 
-  let contentReleaseDate = movieResult.release_date
-    ? movieResult.release_date
-    : null;
-
   useEffect(() => {
     setMovieNumber(
       (movieNumber = Math.floor(Math.random() * trendingResults.length))
     );
   }, [trendingResults]);
 
-  console.log(movieResult);
   return (
-    <section className="px-10 ">
-      <div className="-z-10 h-[60vh] lg:h-[90vh] absolute top-0 w-screen left-0 shadow-2xl ">
+    <section className="px-10">
+      <div className="-z-10 md:h-[60vh] h-[53vh] lg:h-[75vh] absolute top-0 w-screen left-0 shadow-2xl ">
         <Image
           src={image}
           layout="fill"
           objectFit="cover"
           quality="100"
-          className="opacity-80"
+          className="opacity-50 md:opacity-80"
         />
       </div>
-      <div className="flex flex-col p-2 space-y-5">
+      <div className=" flex flex-col p-2 space-y-5 mt-[2.5vh] md:mt-12 bg-orange-900/30 h-[48vh] md:h-[65vh] pt-12">
         <div className="flex flex-col  space-y-2 md:h-[40vh] justify-center lg:h-[40vh] lg:justify-end">
-          <h1 className="text-2xl font-bold md:text-4xl lg:text-6xl lg:mb-4 text-shadow-h1 max-w-[50vw]">
+          <h1 className="text-2xl font-bold md:text-4xl lg:text-6xl lg:mb-4 text-shadow-h1 max-w-[80vw] md:max-w-[50vw]">
             {contentTitle}
           </h1>
-          <p className="sm:w-[90vw] md:w-[40vw] lg:w-[25vw] md:text-md lg:text-xl md:leading-relaxed text-shadow-h2">
+          <p className="sm:w-[90vw] md:w-[40vw] lg:w-[25vw] md:text-md lg:text-xl md:leading-relaxed text-shadow-h2 overflow-ellipsis">
             {contentOverview}
           </p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex justify-center md:justify-start space-x-4">
           <button className="bannerBtn">
             <PlayIcon className="bannerIcon" />
             <h1>Play</h1>
