@@ -17,8 +17,6 @@ const Content = ({
       <div className="flex space-x-3">
         <ContentThumbnail />
         <ContentThumbnail />
-        <ContentThumbnail />
-        <ContentThumbnail />
       </div>
     </section>
   );

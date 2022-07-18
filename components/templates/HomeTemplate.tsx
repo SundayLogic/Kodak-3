@@ -37,11 +37,21 @@ const HomeTemplate = ({ results }: HomeTemplateProps) => {
           contentTitle={"Latest Movies"}
           contentType={"movie"}
         />
-        {/*
-        <Content contentResults={results.seriesPopular} title={"Popular Series"} contentType={"serie"}/>
-        <Content contentResults={results.seriesTopRated} title={"Top Rated Series"} contentType={"serie"}/>
-        <Content contentResults={results.seriesLatest} title={"Latest Series"} contentType={"serie"}/>
-        */}
+        <Content
+          contentResults={results.seriesPopular}
+          title={"Popular Series"}
+          contentType={"serie"}
+        />
+        <Content
+          contentResults={results.seriesTopRated}
+          title={"Top Rated Series"}
+          contentType={"serie"}
+        />
+        <Content
+          contentResults={results.seriesLatest}
+          title={"Latest Series"}
+          contentType={"serie"}
+        />
       </section>
       <Footer />
     </>
